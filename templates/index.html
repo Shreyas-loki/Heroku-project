@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+    
+<body>
+    <div class="login">
+        <h1>University Admit Eligibility Prediction</h1>
+    
+        
+        <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="GRE_score" placeholder="GRE score" required="required" />
+        <input type="text" name="TOEFL_Score" placeholder="TOEFL Score" required="required" />
+		<input type="text" name="University_Rating" placeholder="University Rating" required="required" />
+		<input type="text" name="SOP" placeholder="SOP" required="required" />
+		<input type="text" name="LOR" placeholder="LOR" required="required" />
+		<input type="text" name="CGPA" placeholder="CGPA" required="required" />
+		<input type="text" name="Research" placeholder="Research" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+        
+    <br>
+    <br>
+    
+    {{ Prediction_text }}
+    
+    </div>
+</body>
+</html>
